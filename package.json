@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/Jon1701/WikiViewer#readme",
   "devDependencies": {
-    "bootstrap": "^3.3.6",
-    "jquery": "^2.2.4",
+    "gulp-sass": "^2.3.2",
+    "jquery": "^3.0.0",
     "mustache": "^2.2.1"
   }
 }
