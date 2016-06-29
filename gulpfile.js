@@ -4,7 +4,6 @@
 // Gulp modules.
 ////////////////////////////////////////////////////////////////////////////////
 var gulp = require("gulp");
-var sass = require("gulp-sass");
 var webserver = require('gulp-webserver');
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -27,7 +26,6 @@ gulp.task("javascript", function() {
 // Compile and move stylesheets.
 gulp.task("stylesheets", function() {
   gulp.src(srcPath + "stylesheets/**/*")
-    .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest(destPath + "stylesheets/"));
 });
 
@@ -43,6 +41,10 @@ gulp.task("components", function() {
   // jQuery.
   gulp.src(modulesPath + "jquery/dist/jquery.js")
     .pipe(gulp.dest(destPath + "components/jquery/"));
+
+  // Bootstrap.
+  gulp.src(modulesPath + "bootstrap/dist/**/*")
+    .pipe(gulp.dest(destPath + "components/bootstrap/"));
 
   // Mustache.js
   gulp.src(modulesPath + "mustache/mustache.js")
@@ -68,8 +70,8 @@ gulp.task("webserver", function() {
 // Watch task
 gulp.task("watch", function() {
   gulp.watch(srcPath + "javascript/**/*", ["javascript"]); // JavaScript.
-  gulp.watch(srcPath + "stylesheets/**/*.scss", ["stylesheets"]); // SASS Main.
-  gulp.watch(srcPath + "stylesheets/**/_*.scss", ["stylesheets"]); // SASS Partials.
+  gulp.watch(srcPath + "portfolio/**/*", ["portfolio"]); // JavaScript.
+  gulp.watch(srcPath + "stylesheets/**/*.css", ["stylesheets"]); // Stylesheets.
   gulp.watch(srcPath + "*.html", ["html"]); // HTML files.
 });
 
