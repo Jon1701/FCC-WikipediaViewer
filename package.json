@@ -3,8 +3,11 @@
   "version": "1.0.1",
   "description": "\"# WikiViewer\"",
   "main": "index.js",
+  "bin": {
+    "gulp": "./bin/gulp"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -16,8 +19,10 @@
     "url": "https://github.com/Jon1701/WikiViewer/issues"
   },
   "homepage": "https://github.com/Jon1701/WikiViewer#readme",
-  "devDependencies": {
+  "dependencies": {
     "bootstrap": "^3.3.6",
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1",
     "jquery": "^2.2.4",
     "mustache": "^2.2.1"
   }
